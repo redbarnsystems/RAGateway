@@ -1,0 +1,32 @@
+<user-mapping>
+
+    <!-- Another user, but using md5 to hash the password
+         (example below uses the md5 hash of "PASSWORD") -->
+    <authorize username="admin" password="2c103f2c4ed1e59c0b4e2e01821770fa" encoding="md5">
+        
+        <connection name="vm-example-1">
+            <protocol>ssh</protocol>
+            <param name="hostname">10.0.0.1</param>
+            <param name="port">22</param>
+            <param name="font-name">DroidSansMono</param>
+            <param name="font-size">10</param>
+            <param name="enable-sftp">true</param>
+            <param name="username">Pr351d3nt</param>
+            <param name="password">Password123!</param>
+        </connection>
+
+        <connection name="vm-example-2">
+            <protocol>rdp</protocol>
+            <param name="hostname">10.0.0.2</param>
+            <param name="port">3389</param>
+            <param name="username">Pr351d3nt</param>
+            <param name="password">Password123!</param>
+            <param name="ignore-cert">true</param>
+            <param name="en-gb-qwerty">en-gb-qwerty</param>
+            <param name="enable-wallpaper">true</param>
+            <param name="enable-theming">true</param>
+        </connection>
+
+    </authorize>
+
+</user-mapping>
