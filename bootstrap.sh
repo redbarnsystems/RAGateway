@@ -54,22 +54,9 @@ systemctl enable mariadb
 systemctl restart mariadb
 
 mysqladmin -u root password Password123!
-mysql -u root -p < ../RAGateway-master/conf/mariadbConfig.sql  # Enter above password
+mysql -u root --password=Password123! < ../RAGateway-master/conf/mariadbConfig.sql  # Enter above password
 
 pushd ~/guacamole/sqlauth/guacamole-auth-jdbc-0.9.9/mysql/schema/
-cat ./*.sql | mysql -u root -p Password123!   # Enter SQL root password set above
+cat ./*.sql | mysql -u root --password=Password123!   # Enter SQL root password set above
 
-# MySQL properties
-mysql-hostname: localhost
-mysql-port: 3306
-mysql-database: guacdb
-mysql-username: guacuser
-mysql-password: Password123!
-
-# Additional settings
-mysql-default-max-connections-per-user: 0
-mysql-default-max-group-connections-per-user: 0
-
-
-
-systemctl enable tomcat.service && systemctl enable mariadb.service && chkconfig guacd on
+ln -s /etc/guacamole/guacamole.properties /usr/share/tomcat/.guacamole/
