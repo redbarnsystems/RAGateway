@@ -16,7 +16,7 @@ openssl req \
 
 openssl x509 \
     -req \
-    -extfile <(printf "subjectAltName=DNS:ragateway.redbarnsystems.co.uk,IP:10.0.0.1") \
+    -extfile <(printf "subjectAltName=DNS:ragateway.redbarnsystems.co.uk,IP:10.73.1.22") \
     -days 365 \
     -in server.csr \
     -CA ca.crt \
