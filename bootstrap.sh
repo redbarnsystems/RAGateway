@@ -13,11 +13,11 @@ make
 make install
 ldconfig
 popd
-wget https://github.com/redbarnsystems/Guacamole/archive/refs/heads/master.zip
+wget https://github.com/redbarnsystems/RAGateway/archive/refs/heads/master.zip
 unzip master.zip
 mkdir -p /etc/guacamole
-cp Guacamole-master/conf/user-mapping-redbarn.xml /etc/guacamole/user-mapping.xml
-cp Guacamole-master/conf/guacd.conf /etc/guacamole/guacd.conf
+cp RAGateway-master/conf/user-mapping.xml /etc/guacamole/user-mapping.xml
+cp RAGateway-master/conf/guacd.conf /etc/guacamole/guacd.conf
 export GUACAMOLE_HOME=/etc/guacamole
 service guacd start
 systemctl enable guacd
